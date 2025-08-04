@@ -29,7 +29,7 @@ programa
 
     se(senha != senha_cofre)
     {
-      escreva("VocÊ excedeu o limite de tentativas!")
+      escreva("VocÊ excedeu o limite de tentativas eo cofre foi bloqueado!")
     }
   }
 }
