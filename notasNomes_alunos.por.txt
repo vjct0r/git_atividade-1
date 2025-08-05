@@ -1,0 +1,81 @@
+programa
+{
+	inclua biblioteca Matematica --> m
+	
+	funcao inicio()
+	{
+		cadeia nome[5]
+		real notas[5][3]
+		real medias[5]
+		real maior_media = -1
+		real menor_media = 11
+		real soma_geral = 0
+		inteiro i
+		inteiro j
+		
+		para(i = 0; i < 5; i++)
+		{
+			escreva("\nDigite o nome do(a) aluno(a) ", i + 1, ": ")
+			leia(nome[i])
+			escreva("\n")
+			
+			para(j = 0; j < 3; j++)
+			{
+				escreva("Digite a nota ", j + 1, " do(a) aluno(a) ", nome[i], ": ")
+				leia(notas[i][j])
+			}
+		}
+		
+		para(i = 0; i < 5; i++)
+		{
+			real soma = 0
+			
+			
+			para(j = 0; j < 3; j++)
+			{
+				soma = soma + notas[i][j]
+			}
+			
+			medias[i] = soma / 3
+			
+			soma_geral = soma_geral + medias[i]
+			
+			se(medias[i] > maior_media)
+			{
+				maior_media = medias[i]
+			}
+			
+			se(medias[i] < menor_media)
+			{
+				menor_media = medias[i]
+			}
+		}
+		
+		escreva("---------Resultados finais-------")
+		escreva("\n")
+		
+		para(i = 0; i < 5; i++)
+		{
+			escreva("\nAluno(a): ", nome[i])
+			escreva("\nNotas: ", m.arredondar(medias[i], 2))
+			
+			se(medias[i] >= 7)
+			{
+				escreva("\nAluno(a) ", nome[i], "- Aprovado(a)")
+				escreva("\n")
+			}
+			
+			senao se(medias[i] >= 5 )
+			{
+				escreva("\nAluno(a) ", nome[i], "- Recuperação(a)")
+				escreva("\n")
+			}
+			
+			senao
+			{
+				escreva("\n")
+				escreva("\nReprovado(a)")
+			}
+		}
+	}
+}
